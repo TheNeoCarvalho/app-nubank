@@ -1,4 +1,4 @@
-import { AntDesign, Feather } from "@expo/vector-icons";
+import { AntDesign, Feather, MaterialIcons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 import { Image, StyleSheet, Text, View } from "react-native";
 export default function App() {
@@ -21,11 +21,36 @@ export default function App() {
         </View>
         <Text style={styles.textHeader}>Olá, Manoel</Text>
       </View>
+      <View style={styles.account}>
+        <View style={styles.accountButton}>
+          <Text style={styles.textAccount}>Conta</Text>
+          <MaterialIcons name="arrow-right" size={24} color="black" />
+        </View>
+        <Text style={styles.textAmount}>R$ 29.297,89</Text>
+      </View>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  account: {
+    width: "100%",
+  },
+  accountButton: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    paddingHorizontal: 30,
+    paddingVertical: 20,
+  },
+  textAccount: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  textAmount: {
+    fontSize: 26,
+    fontWeight: "bold",
+    paddingHorizontal: 30,
+  },
   container: {
     flex: 1,
     backgroundColor: "#fff",
@@ -46,7 +71,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     alignItems: "flex-start",
-    paddingTop: 100,
+    paddingTop: 80,
     paddingHorizontal: 30,
   },
   iconsHeader: {
@@ -54,7 +79,7 @@ const styles = StyleSheet.create({
     gap: 12,
   },
   textHeader: {
-    paddingVertical: 10,
+    paddingVertical: 25,
     paddingHorizontal: 30,
     color: "white",
     fontSize: 18,
