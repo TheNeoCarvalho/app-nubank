@@ -1,6 +1,6 @@
 import { AntDesign, Feather, MaterialIcons } from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
-import { Image, StyleSheet, Text, View } from "react-native";
+import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
@@ -28,11 +28,88 @@ export default function App() {
         </View>
         <Text style={styles.textAmount}>R$ 29.297,89</Text>
       </View>
+      <ScrollView horizontal>
+        <View style={styles.servicos}>
+          <View style={styles.servico}>
+            <MaterialIcons name="pix" size={46} />
+          </View>
+          <Text style={{ marginTop: 10 }}>PIX</Text>
+        </View>
+
+        <View style={styles.servicos}>
+          <View style={styles.servico}>
+            <MaterialIcons name="pix" size={46} />
+          </View>
+          <Text style={{ marginTop: 10 }}>PIX</Text>
+        </View>
+
+        <View style={styles.servicos}>
+          <View style={styles.servico}>
+            <MaterialIcons name="pix" size={46} />
+          </View>
+          <Text style={{ marginTop: 10 }}>PIX</Text>
+        </View>
+
+        <View style={styles.servicos}>
+          <View style={styles.servico}>
+            <MaterialIcons name="pix" size={46} />
+          </View>
+          <Text style={{ marginTop: 10 }}>PIX</Text>
+        </View>
+
+        <View style={styles.servicos}>
+          <View style={styles.servico}>
+            <MaterialIcons name="pix" size={46} />
+          </View>
+          <Text style={{ marginTop: 10 }}>PIX</Text>
+        </View>
+
+        <View style={styles.servicos}>
+          <View style={styles.servico}>
+            <MaterialIcons name="pix" size={46} />
+          </View>
+          <Text style={{ marginTop: 10 }}>PIX</Text>
+        </View>
+
+        <View style={styles.servicos}>
+          <View style={styles.servico}>
+            <MaterialIcons name="pix" size={46} />
+          </View>
+          <Text style={{ marginTop: 10 }}>PIX</Text>
+        </View>
+
+        <View style={styles.servicos}>
+          <View style={styles.servico}>
+            <MaterialIcons name="pix" size={46} />
+          </View>
+          <Text style={{ marginTop: 10 }}>PIX</Text>
+        </View>
+
+        <View style={styles.servicos}>
+          <View style={styles.servico}>
+            <MaterialIcons name="pix" size={46} />
+          </View>
+          <Text style={{ marginTop: 10 }}>PIX</Text>
+        </View>
+      </ScrollView>
     </View>
   );
 }
 
 const styles = StyleSheet.create({
+  servico: {
+    width: 60,
+    height: 60,
+    borderRadius: "50%",
+    backgroundColor: "#eee",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  servicos: {
+    justifyContent: "center",
+    alignItems: "center",
+    marginHorizontal: 10,
+  },
   account: {
     width: "100%",
   },
