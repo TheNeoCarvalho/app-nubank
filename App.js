@@ -6,283 +6,306 @@ import {
   MaterialCommunityIcons,
   MaterialIcons
 } from "@expo/vector-icons";
-import { StatusBar } from "expo-status-bar";
-import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
+// import { StatusBar } from "expo-status-bar";
+import {
+  Image,
+  Platform,
+  ScrollView,
+  StyleSheet,
+  Text,
+  View,
+} from "react-native";
 export default function App() {
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <StatusBar style="light" />
-        <View style={styles.header}>
-          <View style={styles.contentHeader}>
-            <Image
-              style={styles.avatarHeader}
-              source={{
-                uri: "https://scontent-for1-1.cdninstagram.com/v/t51.2885-19/57511932_2694824357256408_6013343935437471744_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-for1-1.cdninstagram.com&_nc_cat=100&_nc_ohc=gakpHu-dd90AX8Yq0X2&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBy4OnqvLAo3uIGsTvJ57PfLxzqDntL7s0rendevnuFBA&oe=65E12E28&_nc_sid=8b3528",
-              }}
-            />
-            <View style={styles.iconsHeader}>
-              <Feather name="eye" color="white" size={22} />
-              <AntDesign name="questioncircleo" size={22} color="white" />
-              <Feather name="user" size={22} color="white" />
-            </View>
-          </View>
-          <Text style={styles.textHeader}>Olá, Manoel</Text>
-        </View>
-        <View style={styles.account}>
-          <View style={styles.accountButton}>
-            <Text style={styles.textAccount}>Conta</Text>
-            <MaterialIcons name="arrow-right" size={24} color="black" />
-          </View>
-          <Text style={styles.textAmount}>R$ 139.297,89</Text>
-        </View>
-        <View
-          style={{ height: 150, paddingHorizontal: 20, paddingVertical: 20 }}
-        >
-          <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-            <View style={styles.servicos}>
-              <View style={styles.servico}>
-                <MaterialIcons name="pix" size={28} />
-              </View>
-              <Text style={{ marginTop: 10 }}>Área Pix</Text>
-            </View>
-
-            <View style={styles.servicos}>
-              <View style={styles.servico}>
-                <FontAwesome6 name="money-bill-transfer" size={28} />
-              </View>
-              <Text style={{ marginTop: 10 }}>Transferir</Text>
-            </View>
-
-            <View style={styles.servicos}>
-              <View style={styles.servico}>
-                <FontAwesome6 name="barcode" size={28} />
-              </View>
-              <Text style={{ marginTop: 10 }}>Pagar</Text>
-            </View>
-
-            <View style={styles.servicos}>
-              <View style={styles.servico}>
-                <MaterialIcons name="attach-money" size={28} />
-              </View>
-              <Text style={{ marginTop: 10 }}>Depositar</Text>
-            </View>
-
-            <View style={styles.servicos}>
-              <View style={[{ marginTop: 10 }, styles.servico]}>
-                <MaterialCommunityIcons name="hand-coin" size={28} />
-              </View>
-              <Text style={{ marginTop: 10 }}>Pegar </Text>
-              <Text>emprestado</Text>
-            </View>
-          </ScrollView>
-        </View>
-
-        <View style={styles.myCards}>
-          <MaterialCommunityIcons
-            name="card-multiple-outline"
-            size={28}
-            color="black"
-          />
-          <Text style={{ marginLeft: 10 }}>Meus Cartões</Text>
-        </View>
+    <View style={{ backgroundColor: "#9c44dc", flex: 1 }}>
+      {Platform.OS === "ios" && (
         <View
           style={{
             width: "100%",
-            height: 2,
-            backgroundColor: "#ddd",
-            marginVertical: 22,
+            height: 50, // For all devices, even X, XS Max
+            position: "fixed",
+            top: 0,
+            left: 0,
+            backgroundColor: "#9c44dc",
           }}
         />
-        <View style={{ width: "85%" }}>
-          <View
-            style={{
-              width: "95%",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <View style={{ width: "95%" }}>
-              <Feather name="credit-card" size={28} color="black" />
-              <Text
-                style={{
-                  color: "#333",
-                  fontWeight: "bold",
-                  fontSize: 18,
-                  paddingVertical: 10,
+      )}
+      <ScrollView>
+        <View style={styles.container}>
+          <View style={styles.header}>
+            <View style={styles.contentHeader}>
+              <Image
+                style={styles.avatarHeader}
+                source={{
+                  uri: "https://scontent-for1-1.cdninstagram.com/v/t51.2885-19/57511932_2694824357256408_6013343935437471744_n.jpg?stp=dst-jpg_s150x150&_nc_ht=scontent-for1-1.cdninstagram.com&_nc_cat=100&_nc_ohc=gakpHu-dd90AX8Yq0X2&edm=AOQ1c0wBAAAA&ccb=7-5&oh=00_AfBy4OnqvLAo3uIGsTvJ57PfLxzqDntL7s0rendevnuFBA&oe=65E12E28&_nc_sid=8b3528",
                 }}
-              >
-                Cartão de Crédito
-              </Text>
-            </View>
-            <MaterialIcons name="arrow-right" size={24} color="black" />
-          </View>
-          <Text
-            style={{
-              color: "#000",
-              fontSize: 16,
-              paddingVertical: 4,
-            }}
-          >
-            Fatura atual
-          </Text>
-          <Text
-            style={{
-              color: "#000",
-              fontSize: 20,
-              paddingVertical: 4,
-              fontWeight: "bold",
-            }}
-          >
-            R$ 18.987,90
-          </Text>
-          <Text
-            style={{
-              color: "#444",
-              fontSize: 14,
-            }}
-          >
-            Limite disponível: 89.878,10
-          </Text>
-        </View>
-        <View
-          style={{
-            width: "100%",
-            height: 2,
-            backgroundColor: "#ddd",
-            marginVertical: 22,
-          }}
-        />
-
-        <View style={{ width: "85%" }}>
-          <View
-            style={{
-              width: "95%",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
-            }}
-          >
-            <View style={{ width: "95%" }}>
-              <MaterialCommunityIcons
-                name="hand-coin"
-                size={28}
-                color="black"
               />
-              <Text
-                style={{
-                  color: "#333",
-                  fontWeight: "bold",
-                  fontSize: 18,
-                  paddingVertical: 10,
-                }}
-              >
-                Meus emprestimos
-              </Text>
+              <View style={styles.iconsHeader}>
+                <Feather name="eye" color="white" size={22} />
+                <AntDesign name="questioncircleo" size={22} color="white" />
+                <Feather name="user" size={22} color="white" />
+              </View>
             </View>
-            <MaterialIcons name="arrow-right" size={24} color="black" />
+            <Text style={styles.textHeader}>Olá, Manoel</Text>
           </View>
-          <Text
-            style={{
-              color: "#000",
-              fontSize: 16,
-              paddingVertical: 4,
-            }}
+          <View style={styles.account}>
+            <View style={styles.accountButton}>
+              <Text style={styles.textAccount}>Conta</Text>
+              <MaterialIcons name="arrow-right" size={24} color="black" />
+            </View>
+            <Text style={styles.textAmount}>R$ 139.297,89</Text>
+          </View>
+          <View
+            style={{ height: 150, paddingHorizontal: 20, paddingVertical: 20 }}
           >
-            Até 200.000,00 disponível para você.
-          </Text>
-        </View>
+            <ScrollView horizontal showsHorizontalScrollIndicator={false}>
+              <View style={styles.servicos}>
+                <View style={styles.servico}>
+                  <MaterialIcons name="pix" size={28} />
+                </View>
+                <Text style={{ marginTop: 10 }}>Área Pix</Text>
+              </View>
 
-        <View
-          style={{
-            width: "100%",
-            height: 2,
-            backgroundColor: "#ddd",
-            marginVertical: 22,
-          }}
-        />
+              <View style={styles.servicos}>
+                <View style={styles.servico}>
+                  <FontAwesome6 name="money-bill-transfer" size={28} />
+                </View>
+                <Text style={{ marginTop: 10 }}>Transferir</Text>
+              </View>
 
-        <View style={{ width: "85%" }}>
+              <View style={styles.servicos}>
+                <View style={styles.servico}>
+                  <FontAwesome6 name="barcode" size={28} />
+                </View>
+                <Text style={{ marginTop: 10 }}>Pagar</Text>
+              </View>
+
+              <View style={styles.servicos}>
+                <View style={styles.servico}>
+                  <MaterialIcons name="attach-money" size={28} />
+                </View>
+                <Text style={{ marginTop: 10 }}>Depositar</Text>
+              </View>
+
+              <View style={styles.servicos}>
+                <View style={[{ marginTop: 10 }, styles.servico]}>
+                  <MaterialCommunityIcons name="hand-coin" size={28} />
+                </View>
+                <Text style={{ marginTop: 10 }}>Pegar </Text>
+                <Text>emprestado</Text>
+              </View>
+            </ScrollView>
+          </View>
+
+          <View style={styles.myCards}>
+            <MaterialCommunityIcons
+              name="card-multiple-outline"
+              size={28}
+              color="black"
+            />
+            <Text style={{ marginLeft: 10 }}>Meus Cartões</Text>
+          </View>
           <View
             style={{
-              width: "95%",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
+              width: "100%",
+              height: 2,
+              backgroundColor: "#ddd",
+              marginVertical: 22,
             }}
-          >
-            <View style={{ width: "95%" }}>
-              <FontAwesome5 name="signal" size={28} color="black" />
-              <Text
-                style={{
-                  color: "#333",
-                  fontWeight: "bold",
-                  fontSize: 18,
-                  paddingVertical: 10,
-                }}
-              >
-                Investimentos
-              </Text>
+          />
+          <View style={{ width: "85%", backgroundColor: "#fff" }}>
+            <View
+              style={{
+                width: "95%",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#fff",
+              }}
+            >
+              <View style={{ width: "95%", backgroundColor: "#fff" }}>
+                <Feather name="credit-card" size={28} color="black" />
+                <Text
+                  style={{
+                    color: "#333",
+                    fontWeight: "bold",
+                    fontSize: 18,
+                    paddingVertical: 10,
+                  }}
+                >
+                  Cartão de Crédito
+                </Text>
+              </View>
+              <MaterialIcons name="arrow-right" size={24} color="black" />
             </View>
-            <MaterialIcons name="arrow-right" size={24} color="black" />
+            <Text
+              style={{
+                color: "#000",
+                fontSize: 16,
+                paddingVertical: 4,
+              }}
+            >
+              Fatura atual
+            </Text>
+            <Text
+              style={{
+                color: "#000",
+                fontSize: 20,
+                paddingVertical: 4,
+                fontWeight: "bold",
+                backgroundColor: "#fff",
+              }}
+            >
+              R$ 18.987,90
+            </Text>
+            <Text
+              style={{
+                color: "#444",
+                fontSize: 14,
+              }}
+            >
+              Limite disponível: 89.878,10
+            </Text>
           </View>
-          <Text
-            style={{
-              color: "#000",
-              fontSize: 16,
-              paddingVertical: 4,
-            }}
-          >
-            Conheça nossos fundos de investimentos.
-          </Text>
-        </View>
-
-        <View
-          style={{
-            width: "100%",
-            height: 2,
-            backgroundColor: "#ddd",
-            marginVertical: 22,
-          }}
-        />
-
-        <View style={{ width: "85%" }}>
           <View
             style={{
-              width: "95%",
-              flexDirection: "row",
-              justifyContent: "center",
-              alignItems: "center",
+              width: "100%",
+              height: 2,
+              backgroundColor: "#ddd",
+              marginVertical: 22,
             }}
-          >
-            <View style={{ width: "95%" }}>
-              <AntDesign name="heart" size={28} color="black" />
-              <Text
-                style={{
-                  color: "#333",
-                  fontWeight: "bold",
-                  fontSize: 18,
-                  paddingVertical: 10,
-                }}
-              >
-                Seguro de vida
-              </Text>
+          />
+
+          <View style={{ width: "85%", backgroundColor: "#fff" }}>
+            <View
+              style={{
+                width: "95%",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                backgroundColor: "#fff",
+              }}
+            >
+              <View style={{ width: "95%", backgroundColor: "#fff" }}>
+                <MaterialCommunityIcons
+                  name="hand-coin"
+                  size={28}
+                  color="black"
+                />
+                <Text
+                  style={{
+                    color: "#333",
+                    fontWeight: "bold",
+                    fontSize: 18,
+                    paddingVertical: 10,
+                  }}
+                >
+                  Meus emprestimos
+                </Text>
+              </View>
+              <MaterialIcons name="arrow-right" size={24} color="black" />
             </View>
-            <MaterialIcons name="arrow-right" size={24} color="black" />
+            <Text
+              style={{
+                color: "#000",
+                fontSize: 16,
+                paddingVertical: 4,
+              }}
+            >
+              Até 200.000,00 disponível para você.
+            </Text>
           </View>
-          <Text
+
+          <View
             style={{
-              color: "#000",
-              fontSize: 16,
-              paddingVertical: 4,
+              width: "100%",
+              height: 2,
+              backgroundColor: "#ddd",
+              marginVertical: 22,
             }}
-          >
-            Um seguro completo que cabe no seu bolso.
-          </Text>
+          />
+
+          <View style={{ width: "85%", backgroundColor: "#fff" }}>
+            <View
+              style={{
+                width: "95%",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <View style={{ width: "95%" }}>
+                <FontAwesome5 name="signal" size={28} color="black" />
+                <Text
+                  style={{
+                    color: "#333",
+                    fontWeight: "bold",
+                    fontSize: 18,
+                    paddingVertical: 10,
+                  }}
+                >
+                  Investimentos
+                </Text>
+              </View>
+              <MaterialIcons name="arrow-right" size={24} color="black" />
+            </View>
+            <Text
+              style={{
+                color: "#000",
+                fontSize: 16,
+                paddingVertical: 4,
+              }}
+            >
+              Conheça nossos fundos de investimentos.
+            </Text>
+          </View>
+
+          <View
+            style={{
+              width: "100%",
+              height: 2,
+              backgroundColor: "#ddd",
+              marginVertical: 22,
+            }}
+          />
+
+          <View style={{ width: "85%" }}>
+            <View
+              style={{
+                width: "95%",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <View style={{ width: "95%" }}>
+                <AntDesign name="heart" size={28} color="black" />
+                <Text
+                  style={{
+                    color: "#333",
+                    fontWeight: "bold",
+                    fontSize: 18,
+                    paddingVertical: 10,
+                  }}
+                >
+                  Seguro de vida
+                </Text>
+              </View>
+              <MaterialIcons name="arrow-right" size={24} color="black" />
+            </View>
+            <Text
+              style={{
+                color: "#000",
+                fontSize: 16,
+                paddingVertical: 4,
+              }}
+            >
+              Um seguro completo que cabe no seu bolso.
+            </Text>
+          </View>
         </View>
-      </View>
-    </ScrollView>
+      </ScrollView>
+    </View>
   );
 }
 
@@ -309,9 +332,11 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     marginHorizontal: 10,
+    backgroundColor: "#fff",
   },
   account: {
     width: "100%",
+    backgroundColor: "#fff",
   },
   accountButton: {
     flexDirection: "row",
