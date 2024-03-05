@@ -1,4 +1,10 @@
-import { AntDesign, Feather, MaterialIcons } from "@expo/vector-icons";
+import {
+  AntDesign,
+  Feather,
+  FontAwesome,
+  FontAwesome6,
+  MaterialIcons,
+} from "@expo/vector-icons";
 import { StatusBar } from "expo-status-bar";
 import { Image, ScrollView, StyleSheet, Text, View } from "react-native";
 export default function App() {
@@ -28,70 +34,40 @@ export default function App() {
         </View>
         <Text style={styles.textAmount}>R$ 29.297,89</Text>
       </View>
-      <ScrollView horizontal>
+      <ScrollView contentContainerStyle={styles.contentContainer} horizontal>
         <View style={styles.servicos}>
           <View style={styles.servico}>
-            <MaterialIcons name="pix" size={46} />
+            <MaterialIcons name="pix" size={24} />
           </View>
           <Text style={{ marginTop: 10 }}>PIX</Text>
         </View>
 
         <View style={styles.servicos}>
           <View style={styles.servico}>
-            <MaterialIcons name="pix" size={46} />
+            <FontAwesome name="barcode" size={24} />
           </View>
-          <Text style={{ marginTop: 10 }}>PIX</Text>
+          <Text style={{ marginTop: 10 }}>Pagar</Text>
         </View>
 
         <View style={styles.servicos}>
           <View style={styles.servico}>
-            <MaterialIcons name="pix" size={46} />
+            <FontAwesome6 name="money-bill-transfer" size={24} />
           </View>
-          <Text style={{ marginTop: 10 }}>PIX</Text>
+          <Text style={{ marginTop: 10 }}>Transferir</Text>
         </View>
 
         <View style={styles.servicos}>
           <View style={styles.servico}>
-            <MaterialIcons name="pix" size={46} />
+            <FontAwesome6 name="money-bill-trend-up" size={24} />
           </View>
-          <Text style={{ marginTop: 10 }}>PIX</Text>
-        </View>
-
-        <View style={styles.servicos}>
-          <View style={styles.servico}>
-            <MaterialIcons name="pix" size={46} />
-          </View>
-          <Text style={{ marginTop: 10 }}>PIX</Text>
-        </View>
-
-        <View style={styles.servicos}>
-          <View style={styles.servico}>
-            <MaterialIcons name="pix" size={46} />
-          </View>
-          <Text style={{ marginTop: 10 }}>PIX</Text>
-        </View>
-
-        <View style={styles.servicos}>
-          <View style={styles.servico}>
-            <MaterialIcons name="pix" size={46} />
-          </View>
-          <Text style={{ marginTop: 10 }}>PIX</Text>
-        </View>
-
-        <View style={styles.servicos}>
-          <View style={styles.servico}>
-            <MaterialIcons name="pix" size={46} />
-          </View>
-          <Text style={{ marginTop: 10 }}>PIX</Text>
-        </View>
-
-        <View style={styles.servicos}>
-          <View style={styles.servico}>
-            <MaterialIcons name="pix" size={46} />
-          </View>
-          <Text style={{ marginTop: 10 }}>PIX</Text>
+          <Text style={{ marginTop: 10 }}>Depositar</Text>
         </View>
       </ScrollView>
+      <View>
+        <View>
+          <Text>Conta</Text>
+        </View>
+      </View>
     </View>
   );
 }
